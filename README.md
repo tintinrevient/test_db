@@ -100,13 +100,35 @@ For example:
 
 ```sql
 mysql> SELECT (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no) FROM employees as e) as avg_salary; 
-
+```
+```
 +-------------+
 | avg_salary  |
 +-------------+
 | 604887.4671 |
 +-------------+
 1 row in set (0.54 sec)
+```
+
+```sql
+SELECT e.emp_no, e.first_name, e.last_name, SUM(s.salary) as salary FROM employees as e INNER JOIN salaries as s ON s.emp_no = e.emp_no GROUP BY s.emp_no HAVING salary > (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no) FROM employees as e);
+```
+```
++--------+----------------+------------------+---------+
+| emp_no | first_name     | last_name        | salary  |
++--------+----------------+------------------+---------+
+|  10001 | Georgi         | Facello          | 1281612 |
+|  10004 | Chirstian      | Koblick          |  904196 |
+|  10005 | Kyoichi        | Maliniak         | 1134585 |
+|  10006 | Anneke         | Preusig          |  606179 |
+|  10007 | Tzvetan        | Zielinski        |  991574 |
+...
+| 499986 | Nathan         | Ranta            | 1801349 |
+| 499988 | Bangqing       | Kleiser          | 1213810 |
+| 499992 | Siamak         | Salverda         | 1026876 |
+| 499997 | Berhard        | Lenart           |  997138 |
++--------+----------------+------------------+---------+
+135147 rows in set (3.96 sec)
 ```
 
 ## References
