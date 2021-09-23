@@ -98,6 +98,13 @@ For example:
 
 ## Samples
 
+JOIN
+* INNER JOIN = JOIN
+* LEFT JOIN
+* RIGHT JOIN
+* FULL JOIN
+* CROSS JOIN
+
 ```sql
 SELECT (SELECT SUM(s.salary) FROM salaries AS s) / (SELECT COUNT(e.emp_no) FROM employees AS e) as avg_salary; 
 ```
