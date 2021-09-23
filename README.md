@@ -96,20 +96,5 @@ For example:
     | salaries     | OK            | ok        |
     +--------------+---------------+-----------+
 
-
-## DISCLAIMER
-
-To the best of my knowledge, this data is fabricated and
-it does not correspond to real people. 
-Any similarity to existing people is purely coincidental.
-
-
-## LICENSE
-This work is licensed under the 
-Creative Commons Attribution-Share Alike 3.0 Unported License. 
-To view a copy of this license, visit 
-http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to 
-Creative Commons, 171 Second Street, Suite 300, San Francisco, 
-California, 94105, USA.
-
-
+## References
+* https://learnsql.com/blog/learning-sql-joins-using-real-life-situations/
