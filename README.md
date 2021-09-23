@@ -99,7 +99,7 @@ For example:
 ## Samples
 
 ```sql
-mysql> SELECT (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no) FROM employees as e) as avg_salary; 
+mysql> SELECT (SELECT SUM(s.salary) FROM salaries AS s) / (SELECT COUNT(e.emp_no) FROM employees AS e) as avg_salary; 
 ```
 ```
 +-------------+
@@ -111,7 +111,7 @@ mysql> SELECT (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no
 ```
 
 ```sql
-SELECT e.emp_no, e.first_name, e.last_name, SUM(s.salary) as salary FROM employees as e INNER JOIN salaries as s ON s.emp_no = e.emp_no GROUP BY s.emp_no HAVING salary > (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no) FROM employees as e);
+SELECT e.emp_no, e.first_name, e.last_name, SUM(s.salary) AS salary FROM employees AS e INNER JOIN salaries AS s ON s.emp_no = e.emp_no GROUP BY s.emp_no HAVING salary > (SELECT SUM(s.salary) FROM salaries AS s) / (SELECT COUNT(e.emp_no) FROM employees AS e);
 ```
 ```
 +--------+----------------+------------------+---------+
