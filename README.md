@@ -99,7 +99,7 @@ For example:
 ## Samples
 
 ```sql
-mysql> SELECT (SELECT SUM(s.salary) FROM salaries AS s) / (SELECT COUNT(e.emp_no) FROM employees AS e) as avg_salary; 
+SELECT (SELECT SUM(s.salary) FROM salaries AS s) / (SELECT COUNT(e.emp_no) FROM employees AS e) as avg_salary; 
 ```
 ```
 +-------------+
