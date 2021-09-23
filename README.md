@@ -96,5 +96,18 @@ For example:
     | salaries     | OK            | ok        |
     +--------------+---------------+-----------+
 
+## Samples
+
+```sql
+mysql> SELECT (SELECT SUM(s.salary) FROM salaries as s) / (SELECT COUNT(e.emp_no) FROM employees as e) as avg_salary; 
+
++-------------+
+| avg_salary  |
++-------------+
+| 604887.4671 |
++-------------+
+1 row in set (0.54 sec)
+```
+
 ## References
 * https://learnsql.com/blog/learning-sql-joins-using-real-life-situations/
